@@ -1,34 +1,26 @@
 import React from "react";
-import "./HarryPotterCard.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, CardMedia, Typography } from "@material-ui/core"; //download material ui instructions are in codeJournal
+import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
+
 const useStyles = makeStyles({
   root: {
-    //   minWidth: '40%',
-
     maxWidth: '40%',
     margin: '10px',
     backgroundColor: 'rgb(142, 151, 58)',
-    
     boxShadow: '8px 8px 15px 1px rgba(237, 245, 171, 0.5)'
   },
   title: {
     fontFamily: 'montserrat'
-
   },
   content: {
-      color: 'white',
-      fontFamily: 'montserrat'
-
+      color: 'white'
   },
   media: {
     padding: '5%',
-    maxWidth: '100%'
-
   },
   metadata: {
       display: 'flex',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
   }
 });
 
@@ -60,20 +52,20 @@ const HarryPotterCard = (props) => {
           <img src={poster} alt="movie poster" />
         </CardMedia>
         <Typography  component="h2">
-          Release Date: {year}
+          {`Release Date: ${year}`}
         </Typography>
         <Typography component="p">
-          Runtime: {runtime}
+          {`Runtime: ${runtime}`}
         </Typography>
         <Typography  component="h2">
-          Director: {director}
+          {`Director: ${director}`}
         </Typography>
         <Typography  component="h2">
-          Cast: {actors}
+          {`Cast: ${actors}`}`
         </Typography>
         <Typography className={classes.metadata} component="h3">
-          <Typography>Rotten Tomatoes: {metascore} </Typography>
-          <Typography>imdb Rating: {imdbRating}</Typography>
+          <Typography>{`Rotten Tomatoes: ${metascore}`} </Typography>
+          <Typography>{`imdb Rating: ${imdbRating}`}</Typography>
         </Typography>
       </CardContent>
     </Card>

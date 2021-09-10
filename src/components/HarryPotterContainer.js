@@ -3,16 +3,15 @@ import Movie from "./HarryPotterCard";
 import { Box } from "@material-ui/core";
 const HarryPotterContainer = () => {
   return (
+      <div>
     <Box
       sx={{
         display: "flex",
         justifyContent: "center",
         flexWrap: "wrap",
-        // flexDirection: "row",
         width: '100%'
       }}
     >
-      {/* <div> */}
         {movieMetadata.map((movie) => {
           return (
             <Movie
@@ -30,8 +29,8 @@ const HarryPotterContainer = () => {
             />
           );
         })}
-      {/* </div> */}
     </Box>
+    </div>
   );
 };
 
