@@ -6,13 +6,10 @@ const HarryPotterContainer = () => {
     <Box
       sx={{
         display: "flex",
-        // gridTemplateColumns: 'auto auto auto auto',
-
         justifyContent: "center",
         flexWrap: "wrap",
-        flexDirection: "row",
-        // width: '50%'
-        // alignContent: 'flex-start'
+        // flexDirection: "row",
+        width: '100%'
       }}
     >
       {/* <div> */}
