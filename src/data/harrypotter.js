@@ -16,14 +16,6 @@ export const harryPotter = [
       "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
   },
   {
-    Title: "Harry Potter and the Chamber of Secrets",
-    Year: "2002",
-    imdbID: "tt0295297",
-    Type: "movie",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg",
-  },
-  {
     Title: "Harry Potter and the Prisoner of Azkaban",
     Year: "2004",
     imdbID: "tt0304141",
@@ -62,14 +54,6 @@ export const harryPotter = [
     Type: "movie",
     Poster:
       "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg",
-  },
-  {
-    Title: "Harry Potter and the Forbidden Journey",
-    Year: "2010",
-    imdbID: "tt1756545",
-    Type: "movie",
-    Poster:
-      "https://m.media-amazon.com/images/M/MV5BNDM0YzMyNGUtMTU1Yy00OTE2LWE5NzYtZDZhMTBmN2RkNjg3XkEyXkFqcGdeQXVyMzU5NjU1MDA@._V1_SX300.jpg",
   },
   {
     Title: "Harry Potter and the Chamber of Secrets",

@@ -1,27 +1,39 @@
-import { harryPotter } from "../data/harrypotter";
+import { movieMetadata } from "../data/movieMetadata";
 import Movie from "./HarryPotterCard";
 import { Box } from "@material-ui/core";
 const HarryPotterContainer = () => {
   return (
-      <Box sx={{
+    <Box
+      sx={{
+        display: "flex",
+        // gridTemplateColumns: 'auto auto auto auto',
 
-        display: 'flex',
-        flexWrap: 'wrap'
-      }}>
-    <div>
-      {harryPotter.map((movie) => {
-        return (
-          <Movie 
-          sx={{
-              margin: '16px'
-          }}
-          movieTitle={movie.Title} 
-          year={movie.Year} 
-          id={movie.imdbID}
-          key={movie.imdbID} />
-        );
-      })}
-    </div>
+        justifyContent: "center",
+        flexWrap: "wrap",
+        flexDirection: "row",
+        // width: '50%'
+        // alignContent: 'flex-start'
+      }}
+    >
+      {/* <div> */}
+        {movieMetadata.map((movie) => {
+          return (
+            <Movie
+              movieTitle={movie.Title}
+              year={movie.Year}
+              id={movie.imdbID}
+              poster={movie.Poster}
+              key={movie.imdbID}
+              imdbRating={movie.imdbRating}
+              metascore={movie.Metascore}
+              actors={movie.Actors}
+              runtime={movie.Runtime}
+              director={movie.Director}
+              plot={movie.Plot}
+            />
+          );
+        })}
+      {/* </div> */}
     </Box>
   );
 };
