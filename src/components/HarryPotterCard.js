@@ -1,72 +1,56 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: '40%',
-    margin: '10px',
-    backgroundColor: 'rgb(142, 151, 58)',
-    boxShadow: '8px 8px 15px 1px rgba(237, 245, 171, 0.5)'
-  },
-  title: {
-    fontFamily: 'montserrat'
-  },
-  content: {
-      color: 'white'
-  },
-  media: {
-    padding: '5%',
-  },
-  metadata: {
-      display: 'flex',
-      justifyContent: 'space-evenly',
-  }
-});
+import * as React from "react";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+} from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import Tooltip from "@mui/material/Tooltip";
 
 const HarryPotterCard = (props) => {
-  const classes = useStyles();
-  const {
-    movieTitle,
-    year,
-    id,
-    poster,
-    imdbRating,
-    metascore,
-    actors,
-    runtime,
-    director,
-    plot,
-  } = props;
+  const [loadMovieData, setLoadMovieData] = React.useState(false);
+  const [favorite, setFavorite] = React.useState(false);
 
+  const handleSetMovieDataClick = () => {
+    setLoadMovieData(loadMovieData);
+    props.loadMetadataFunction(props.movie);
+  };
+
+  const handleFavoriteClick = () => {
+    if (favorite) {
+      setFavorite(false)
+    } else {
+      setFavorite(true)
+
+    }
+    props.addToFavoritesFunction(props.movie);
+
+  };
   return (
-    <Card key={id} className={classes.root}>
-      <CardContent className={classes.content}>
-        <Typography className={classes.title} gutterBottom variant="h5" component="h2">
-          {movieTitle}
-        </Typography>
-        <Typography component="p">
-          {plot}
-        </Typography>
-        <CardMedia className={classes.media} title="Movie Poster">
-          <img src={poster} alt="movie poster" />
+    <Card
+      sx={{
+        m: 3,
+        bgcolor: "#000",
+        border: "2px solid #EEE",
+        color: "#EEE"
+      }}
+    >
+      <CardContent>
+        <CardMedia title="Movie Poster" >
+          <img src={props.movie.Poster} alt="movie poster" />
         </CardMedia>
-        <Typography  component="h2">
-          {`Release Date: ${year}`}
-        </Typography>
-        <Typography component="p">
-          {`Runtime: ${runtime}`}
-        </Typography>
-        <Typography  component="h2">
-          {`Director: ${director}`}
-        </Typography>
-        <Typography  component="h2">
-          {`Cast: ${actors}`}`
-        </Typography>
-        <Typography className={classes.metadata} component="h3">
-          <Typography>{`Rotten Tomatoes: ${metascore}`} </Typography>
-          <Typography>{`imdb Rating: ${imdbRating}`}</Typography>
-        </Typography>
+        <Tooltip title="Learn More">
+          <IconButton onClick={handleSetMovieDataClick}>
+            <InfoIcon sx={{color: "#EEE"}}/>
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Add To Favorites">
+          <IconButton onClick={handleFavoriteClick}>
+            <FavoriteIcon sx={{color: favorite ? '#F00' : '#EEE'}}/>
+          </IconButton>
+        </Tooltip>
       </CardContent>
     </Card>
   );
